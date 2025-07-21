@@ -1,4 +1,3 @@
-// migrations/2_deploy_proxy.js
 const Proxy   = artifacts.require("Proxy");
 const MyToken = artifacts.require("MyToken");
 
@@ -21,9 +20,10 @@ module.exports = async function(deployer, network, accounts) {
       ]
     },
     [
-      "AUA TRC20 Token",                    // your token name
-      "AUA",                               // your symbol
-      web3.utils.toWei("1000000", "ether") // 1 000 000 * 10^18
+      "AHM TRC20 Token",                    // your token name
+      "AHM",                               // your symbol
+      //web3.utils.toWei("1000000", "ether") // 1 000 000 * 10^18 or hardcode 1000000000000000000000000000000
+      BigInt("1000000") * (BigInt(10) ** BigInt(18))
     ]
   );
 

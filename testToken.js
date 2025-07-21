@@ -1,4 +1,3 @@
-// scripts/testToken.js
 require('dotenv').config();
 const {TronWeb} = require('tronweb');
 
