@@ -14,6 +14,7 @@ This project demonstrates how to deploy and interact with an upgradeable TRC-20 
 ## Setup
 
 Clone this repository and install dependencies:
+
 ```bash
 git clone https://github.com/aziz1975/trc20-proxy.git
 ```
@@ -84,7 +85,6 @@ This script performs the following:
 
 ---
 
-
 ## Key Scripts
 
 * `1_deploy_logic.js`: Deploys the MyToken implementation
@@ -114,3 +114,65 @@ This script performs the following:
 
 ---
 
+## Contract Verification on Tronscan
+
+When verifying contracts, you might encounter the error:
+
+```
+verification failed. Please confirm the correct parameters and try again.
+```
+
+**Solution:**
+
+* Ensure the correct compiler version (`v0.8.23`) and optimizer settings (`200 runs`) match exactly.
+* `Proxy.sol` requires two constructor parameters:
+
+  * Implementation address (`MyToken` logic contract address)
+  * Initialization data (encoded ABI data from deployment script)
+* `MyToken.sol` has no constructor arguments.
+
+If verification issues persist:
+
+* Visit: [Contact Tronscan Support](https://nile.tronscan.io/#/tools/contactUs), raise a ticket through "Others".
+* Or contact the [Telegram developer group](http://t.me/TronOfficialDevelopersGroupEn).
+
+---
+
+## Adding a Logo to Your Token
+
+* Visit [Token Update Page](https://nile.tronscan.io/#/wallet/tokensCreate)
+* Select your token and update your logo.
+
+---
+
+## Updating Token Metadata
+
+Update metadata (name, description, website, etc.):
+
+* Visit [Token Update Page](https://nile.tronscan.io/#/wallet/tokensCreate)
+* Select your token and update relevant information.
+
+---
+
+## TronLink Integration
+
+To add the token in TronLink:
+
+* Wait approximately 5–10 minutes for TronLink synchronization.
+* If synchronization issues occur, seek help in the [Telegram developer group](http://t.me/TronOfficialDevelopersGroupEn).
+
+---
+
+## Viewing Your Token on Tronscan
+
+To view your token:
+
+* Use the search feature on [Tronscan homepage](https://nile.tronscan.io/) and enter the token name or contract address.
+
+---
+
+## Adding Tokens to Other Wallets (e.g., TrustWallet)
+
+Wallet integration rules vary:
+
+* Contact the specific wallet’s customer service or documentation to determine their integration process.
